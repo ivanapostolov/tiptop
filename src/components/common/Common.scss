@@ -2,11 +2,14 @@
 @import '../../variables.scss';
 
 .cm_heading {
-   @extend .container, .display-6;
-
-   text-align: center;
    background-color: $primaryColor;
    color: white;
    margin: 0 !important;
    padding: 1rem 0;
+
+   .wrapper {
+      @extend .container, .display-6;
+      text-align: center;
+      color: white;
+   }
 }

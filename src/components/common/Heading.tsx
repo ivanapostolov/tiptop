@@ -8,7 +8,9 @@ export interface HeadingProps {
 const Heading: React.FC<HeadingProps> = ({text}) => {
    return (
       <div className="cm_heading">
-         {text}
+         <div className="wrapper">
+            {text}
+         </div>
       </div>
    );
 }
