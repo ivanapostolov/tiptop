@@ -1,0 +1,41 @@
+@import '../../../bootstrap/scss/bootstrap.scss';
+@import '../../variables.scss';
+
+$iconSize: 2rem;
+
+.ct_catalogue {
+   @extend .container-fluid;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   padding: 0.5rem 0;
+   background-color: $primaryColor;
+}
+
+.ct_product {
+   margin: 0.2rem;
+   padding: 0.5rem;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-items: center;
+   background-color: white;
+   color: $primaryColor;
+   border-radius: 10px;
+   text-decoration: none;
+   cursor: pointer;
+
+   .icon {
+      flex-grow: 0;
+      height: $iconSize;
+      width: $iconSize;
+      background-size: cover;
+   }
+
+   .text {
+      flex-grow: 1;
+      margin: 0 1rem;
+      text-align: center;
+   }
+}

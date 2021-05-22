@@ -1,0 +1,31 @@
+@import '../../../bootstrap/scss/bootstrap.scss';
+@import '../../variables.scss';
+
+.ft_features {
+   @extend .container, .px-4, .py-5;
+
+   .heading {
+      @extend .h2;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid darken($backgroundColor, 20%);
+   }
+
+   .features {
+      @extend .row, .g-4, .py-5, .row-cols-1, .row-cols-lg-3;
+   }
+}
+
+.ft_feature {
+   @extend .col, .d-flex, .align-items-start, .ft_feature;
+
+   .icon__wrapper {
+      @extend .bg-light, .text-dark, .flex-shrink-0, .me-3;
+
+      .icon {
+         width: 2rem;
+         height: 2rem;
+         background-color: $backgroundColor;
+         background-size: cover;
+      }
+   }
+}

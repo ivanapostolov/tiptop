@@ -1,0 +1,113 @@
+@import '../../../bootstrap/scss/bootstrap.scss';
+@import '../../variables.scss';
+
+.pi__serviceTitle {
+   $iconSize: 5rem;
+
+   padding: 2rem 0;
+   background-color: white;
+   color: #0C3E95;
+
+   .wrapper {
+      @extend .container;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+         @include rfs($iconSize, height);
+         @include rfs($iconSize, width);
+         background-size: cover;
+         flex-shrink: 0
+      }
+   
+      .title {
+         @include font-size(2rem);
+         margin: 0 1rem;
+         text-align: center;
+      }
+   }
+}
+
+.pi__inclusions {
+   @extend .container;
+   display: flex;
+   flex-direction: column;
+
+   .heading {
+      margin: 1rem 0;
+      align-self: center;
+   }
+}
+
+.pi__inclusion {
+   margin: 1rem 0;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+
+   .icon__wrapper {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 1rem;
+
+      .icon {
+         fill: $primaryColor;
+         width: auto;
+         height: 2rem;
+      }
+   }
+
+   .content {
+      @extend .h6;
+   }
+}
+
+.pi__faqs {
+   @extend .container;
+   display: flex;
+   flex-direction: column;
+
+   .heading {
+      margin: 1rem 0;
+      align-self: center;
+   }
+}
+
+.pi__faq {
+   margin: 0.5rem 0;
+   display: flex;
+   flex-direction: row;
+
+   .index {
+      @extend .h3;
+      margin-right: 0.5rem;
+      color: $primaryColor;
+   }
+
+   .icon__wrapper {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 1rem;
+
+      .icon {
+         fill: $primaryColor;
+         width: auto;
+         height: 2rem;
+      }
+   }
+
+   .faq {
+      margin-bottom: 0.2rem;
+
+      .question {
+         @extend .h6, .fw-bold;
+      }
+
+      .answer {
+         @extend .h6;
+      }
+   }
+}

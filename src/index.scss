@@ -1,0 +1,7 @@
+@import '../bootstrap/scss/bootstrap.scss';
+@import './variables.scss';
+
+body {
+   //@extend .d-flex, .flex-column, .h-100;
+   background-color: $backgroundColor;
+}

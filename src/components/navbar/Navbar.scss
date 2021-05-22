@@ -1,0 +1,30 @@
+@import '../../../bootstrap/scss/bootstrap.scss';
+
+.nb_navbar {
+   @extend .navbar, .navbar-expand-lg, .navbar-dark, .user-select-none;
+   background-color: #0675a4;
+
+   .brand {
+      @extend .navbar-brand;
+   }
+
+   .toggler {
+      @extend .navbar-toggler;
+
+      span {
+         @extend .navbar-toggler-icon
+      }
+   }
+
+   .collapse {
+      @extend .collapse, .navbar-collapse;
+      
+      .nav {
+         @extend .navbar-nav;//.ms-auto;
+
+         .link {
+            @extend .nav-link, .mx-2;
+         }
+      }
+   }
+}
