@@ -13,7 +13,6 @@ const Product: React.FC = () => {
    return (
       <div>
          <Heading text="2. ХАРАКТЕРИСТИКИ НА ОБЕКТА" />
-         <Catalogue />
          <ProductInfo name={productData.name} icon={productData.icon} included={productData.included} faq={productData.faq} />
       </div>
    );
