@@ -1,11 +1,29 @@
 @import '../../../bootstrap/scss/bootstrap.scss';
+@import '../../variables.scss';
 
 .nb_navbar {
    @extend .navbar, .navbar-expand-lg, .navbar-dark, .user-select-none;
-   background-color: #0675a4;
+   background-color: darken($primaryColor, 5%); //#febb02;
 
    .brand {
+      $iconSize: 2.5rem;
       @extend .navbar-brand;
+
+      .logo {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+
+         .text {
+            @include font-size(1.5rem);
+         }
+         .icon {
+            @include rfs($iconSize, width);
+            @include rfs($iconSize, height);
+            background-size: cover;
+            margin: 0 0.25rem;
+         }
+      }
    }
 
    .toggler {
@@ -20,7 +38,7 @@
       @extend .collapse, .navbar-collapse;
       
       .nav {
-         @extend .navbar-nav;//.ms-auto;
+         @extend .navbar-nav, .ms-auto;
 
          .link {
             @extend .nav-link, .mx-2;
