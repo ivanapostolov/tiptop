@@ -1,12 +1,11 @@
 @import '../../../bootstrap/scss/bootstrap.scss';
 @import '../../variables.scss';
 
-.ft_features {
+.ft__features {
    @extend .container, .px-4, .py-5;
 
    .heading {
-      @extend .h2;
-      padding-bottom: 0.5rem;
+      @extend .h2, .pb-2;
       border-bottom: 1px solid darken($backgroundColor, 20%);
    }
 
@@ -15,8 +14,8 @@
    }
 }
 
-.ft_feature {
-   @extend .col, .d-flex, .align-items-start, .ft_feature;
+.ft__feature {
+   @extend .col, .d-flex, .align-items-start;
 
    .icon__wrapper {
       @extend .bg-light, .text-dark, .flex-shrink-0, .me-3;

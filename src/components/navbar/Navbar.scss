@@ -1,36 +1,21 @@
 @import '../../../bootstrap/scss/bootstrap.scss';
 @import '../../variables.scss';
 
-.nb_navbar {
-   @extend .navbar, .navbar-expand-lg, .navbar-dark, .user-select-none;
-   background-color: darken($primaryColor, 5%); //#febb02;
+$logoSize: 2.5rem;
 
-   .brand {
-      $iconSize: 2.5rem;
-      @extend .navbar-brand;
+.nb__navbar {
+   @extend .navbar, .navbar-expand-lg, .navbar-dark, .container-fluid, .user-select-none;
+   background-color: darken($primaryColor, 5%);
 
-      .logo {
-         display: flex;
-         flex-direction: row;
-         align-items: center;
-
-         .text {
-            @include font-size(1.5rem);
-         }
-         .icon {
-            @include rfs($iconSize, width);
-            @include rfs($iconSize, height);
-            background-size: cover;
-            margin: 0 0.25rem;
-         }
-      }
+   .brand__link {
+      @extend .navbar-brand, .p-0;
    }
 
    .toggler {
       @extend .navbar-toggler;
 
       span {
-         @extend .navbar-toggler-icon
+         @extend .navbar-toggler-icon;
       }
    }
 
@@ -44,5 +29,20 @@
             @extend .nav-link, .mx-2;
          }
       }
+   }
+}
+
+.nb__brand {
+   @extend .d-flex, .flex-row, .align-items-center;
+   
+   .text {
+      @include font-size(1.5rem);
+   }
+   
+   .icon {
+      @include rfs($logoSize, width);
+      @include rfs($logoSize, height);
+      background-size: cover;
+      margin: 0 .25rem;
    }
 }

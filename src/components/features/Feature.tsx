@@ -13,7 +13,7 @@ const Feature: React.FC<FeatureProps> = ({ title, content, icon }) => {
    };
 
    return (
-      <div className="ft_feature">
+      <div className="ft__feature">
          <div className="icon__wrapper">
             <div style={iconStyle} className="icon" />
          </div>

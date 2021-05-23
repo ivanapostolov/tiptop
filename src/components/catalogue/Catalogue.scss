@@ -1,9 +1,9 @@
 @import '../../../bootstrap/scss/bootstrap.scss';
 @import '../../variables.scss';
 
-$logoSize: 2rem;
+$iconSize: 2rem;
 
-.ct_catalogue {
+.ct__catalogue {
    padding: 0.5rem 0;
    background-color: $primaryColor;
 
@@ -15,7 +15,7 @@ $logoSize: 2rem;
    }
 }
 
-.ct_product {
+.ct__product {
    margin: 0.25rem;
    padding: 0.5rem;
    max-width: 540px;
@@ -30,8 +30,8 @@ $logoSize: 2rem;
    cursor: pointer;
 
    .icon {
-      height: $logoSize;
-      width: $logoSize;
+      height: $iconSize;
+      width: $iconSize;
       flex-grow: 0;
       background-size: cover;
    }

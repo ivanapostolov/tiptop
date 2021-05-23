@@ -14,7 +14,7 @@ const Product: React.FC<ProductProps> = ({ name, icon, link }) => {
    };
    
    return (
-      <Link className="ct_product" to={`/service/${link}`}>
+      <Link className="ct__product" to={`/service/${link}`}>
          <div style={iconStyle} className="icon" />
          <div className="text">{ name }</div>
       </Link>

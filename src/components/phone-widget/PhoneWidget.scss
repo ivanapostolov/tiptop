@@ -1,3 +1,4 @@
+$iconSize: 1.25rem;
 
 .pw__phoneWidget {
    padding: 1.25rem;
@@ -11,8 +12,8 @@
    align-items: center;
 
     .icon {
-      height: 1.25rem;
-      width: 1.25rem;
+      height: $iconSize;
+      width: $iconSize;
       background-size: cover;
    }
 }

@@ -1,11 +1,12 @@
 @import '../../../bootstrap/scss/bootstrap.scss';
 @import '../../variables.scss';
 
-.cm_heading {
+.cm__heading {
    background-color: $primaryColor;
    color: white;
    margin: 0 !important;
    padding: 1rem 0;
+   text-transform: uppercase;
 
    .wrapper {
       @extend .container, .display-6;

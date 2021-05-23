@@ -7,7 +7,7 @@ export interface HeadingProps {
 
 const Heading: React.FC<HeadingProps> = ({text}) => {
    return (
-      <div className="cm_heading">
+      <div className="cm__heading">
          <div className="wrapper">
             {text}
          </div>

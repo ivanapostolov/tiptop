@@ -6,7 +6,7 @@ import Features from '../features/Features';
 const Home: React.FC = () => {
    return (
       <div>
-         <Heading text="1. ИЗБЕРИ УСЛУГА" />
+         <Heading text="1. избери услуга" />
          <Catalogue />
          <Features />
       </div>

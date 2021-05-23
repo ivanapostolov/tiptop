@@ -23,7 +23,7 @@ const Features: React.FC = () => {
    );
    
    return (
-      <div className="ft_features">
+      <div className="ft__features">
          <div className="heading">Добре дошли при нас!</div>
          <div className="features">
             {features}

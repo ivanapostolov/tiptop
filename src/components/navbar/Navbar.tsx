@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Brand from './Brand';
 import './Navbar.scss';
 
 const Navbar: React.FC = () => {
@@ -9,27 +10,18 @@ const Navbar: React.FC = () => {
       setCollapsed(!collapsed);
    }
 
-   const iconStyle = {
-      backgroundImage: `url("/assets/logo/logo.svg")`
-   };
-
    return (
-      <nav className="nb_navbar">
-         <div className="container-fluid">
-            <Link className="brand" to="/">
-            <div className="logo">
-               <div className="icon" style={iconStyle} />
-               <div className="text">TipTop</div>
-            </div>
-            </Link>
-            <button className="toggler" type="button" onClick={toggleCollapse}>
-               <span></span>
-            </button>
-            <div className={`collapse ${collapsed ? 'd-none' : 'show'}`}>
-               <div className="nav">
-                  <Link className="link" to="/">Услуги</Link>
-                  <Link className="link" to="/about">За нас</Link>
-               </div>
+      <nav className="nb__navbar">
+         <Link className="brand__link" to="/">
+            <Brand />
+         </Link>
+         <button className="toggler" type="button" onClick={toggleCollapse}>
+            <span />
+         </button>
+         <div className={`collapse ${collapsed ? 'd-none' : 'show'}`}>
+            <div className="nav">
+               <Link className="link" to="/">Услуги</Link>
+               <Link className="link" to="/about">За нас</Link>
             </div>
          </div>
       </nav>

@@ -1,12 +1,12 @@
 @import '../../../bootstrap/scss/bootstrap.scss';
 @import '../../variables.scss';
 
-.pi__serviceTitle {
-   $iconSize: 6rem;
+$iconSize: 6rem;
 
+.pi__serviceTitle {
    padding: 2.5rem 0;
    background-color: white;
-   color: #0C3E95;
+   color: $primaryColor;
 
    .wrapper {
       @extend .container;
