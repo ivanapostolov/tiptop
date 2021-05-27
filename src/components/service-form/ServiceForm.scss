@@ -1,0 +1,36 @@
+@import '../../../bootstrap/scss/bootstrap.scss';
+@import '../../variables.scss';
+
+.sf__serviceForm {
+   @extend .container;
+   background-color: $primaryColor;
+   padding: 2rem 2rem;
+   display: flex;
+   justify-content: center;
+}
+
+.sf__housemaid {
+   flex-grow: 1;
+   text-align: center;
+   max-width: 540px;
+   
+   button {
+      padding: 0.5rem 3rem;
+      background-color: $accentColor;
+   }
+}
+
+.sf__priceField {
+   display: flex;
+   justify-content: space-between;
+   @include font-size(2rem);
+   margin: 1rem 0;
+
+   .text {
+      color: white;
+   }
+
+   .value {
+      color: white;
+   }
+}

@@ -1,11 +1,12 @@
 @import '../../../bootstrap/scss/bootstrap.scss';
 @import '../../variables.scss';
 
-$logoSize: 2.5rem;
+$logoSize: 2rem;
 
 .nb__navbar {
-   @extend .navbar, .navbar-expand-lg, .navbar-dark, .container-fluid, .user-select-none;
-   background-color: darken($primaryColor, 5%);
+   @extend .navbar, .navbar-expand-lg, .container-fluid, .user-select-none;
+   background-color: white;//darken($primaryColor, 5%);
+   color: $primaryColor !important;
 
    .brand__link {
       @extend .navbar-brand, .p-0;
@@ -27,6 +28,7 @@ $logoSize: 2.5rem;
 
          .link {
             @extend .nav-link, .mx-2;
+            color: $primaryColor !important;
          }
       }
    }
@@ -36,12 +38,16 @@ $logoSize: 2.5rem;
    @extend .d-flex, .flex-row, .align-items-center;
    
    .text {
-      @include font-size(1.5rem);
+      //@include font-size(1.5rem);
+      font-family: "Bauhaus";
+      letter-spacing: 2px;
+      font-size: 1.75rem;
+      color: #0C3E95;
    }
    
    .icon {
-      @include rfs($logoSize, width);
-      @include rfs($logoSize, height);
+      width: $logoSize;
+      height: $logoSize;
       background-size: cover;
       margin: 0 .25rem;
    }

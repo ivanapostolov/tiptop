@@ -10,6 +10,7 @@
 
    .wrapper {
       @extend .container, .display-6;
+      @include font-size(1.75rem);
       text-align: center;
       color: white;
    }

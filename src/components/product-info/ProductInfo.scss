@@ -5,7 +5,7 @@ $iconSize: 6rem;
 
 .pi__serviceTitle {
    padding: 2.5rem 0;
-   background-color: white;
+   background-color: #EEEEEE;
    color: $primaryColor;
 
    .wrapper {
@@ -20,7 +20,7 @@ $iconSize: 6rem;
          @include rfs($iconSize, height);
          @include rfs($iconSize, width);
          background-size: cover;
-         flex-shrink: 0
+         flex-shrink: 0;
       }
    
       .title {

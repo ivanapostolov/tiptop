@@ -6,7 +6,7 @@ import Features from '../features/Features';
 const Home: React.FC = () => {
    return (
       <div>
-         <Heading text="1. избери услуга" />
+         <p style={{color: "white", backgroundColor: "#0C3E95"}} className="display-5 p-3 text-center fw-bolder m-0">Нова Ера в почистването!</p>
          <Catalogue />
          <Features />
       </div>

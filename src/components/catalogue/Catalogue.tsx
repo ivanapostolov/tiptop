@@ -16,6 +16,7 @@ const Catalogue: React.FC = () => {
 
    return (
       <div className="ct__catalogue">
+         <h3>1. Избери услуга</h3>
          <div className="wrapper">
             {products}
          </div>
