@@ -5,7 +5,7 @@ import './Features.scss';
 const Features: React.FC = () => {
    const featurePropsList: FeatureProps[] = [{
          title: "Високо Качество",
-         content: "Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.",
+         content: "Всеки един от служителите ни е преминал през обучение от фирмата",
          icon: "quality"
       }, {
          title: "Бързо и лесно",
