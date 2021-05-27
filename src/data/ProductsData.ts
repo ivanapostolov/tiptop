@@ -6,6 +6,7 @@ export interface QuestionModel {
 export interface ProductDataModel {
    name: string;
    icon: string;
+   promo: boolean;
    included: string[];
    faq: QuestionModel[];
 }
@@ -18,6 +19,7 @@ const ProductsData: ProductsDataModel = {
    housemaid: {
       name: 'Домашни помощници',
       icon: 'cleaning-lady',
+      promo: true,
       included: [
          'Почистване на най-труднодостъпните места, зад и под мебели, под килими, над гардероби и шкафове;',
          'Обезпрашаване на всички вертикални и хоризонтални повърхности;',
@@ -34,6 +36,7 @@ const ProductsData: ProductsDataModel = {
    cleaning: {
       name: 'Основно почистване',
       icon: 'cleaning',
+      promo: true,
       included: [
          'Почистване на най-труднодостъпните места, зад и под мебели, под килими, над гардероби и шкафове;',
          'Обезпрашаване на всички вертикални и хоризонтални повърхности;',
@@ -50,6 +53,7 @@ const ProductsData: ProductsDataModel = {
    tenants: {
       name: 'Почистване преди/след наематели',
       icon: 'couple',
+      promo: false,
       included: [
          'Почистване на най-труднодостъпните места, зад и под мебели, под килими, над гардероби и шкафове;',
          'Обезпрашаване на всички вертикални и хоризонтални повърхности;',
@@ -66,6 +70,7 @@ const ProductsData: ProductsDataModel = {
    renovation: {
       name: 'Почистване след ремонт',
       icon: 'renovation',
+      promo: false,
       included: [
          'Почистване на най-труднодостъпните места, зад и под мебели, под килими, над гардероби и шкафове;',
          'Обезпрашаване на всички вертикални и хоризонтални повърхности;',
@@ -82,6 +87,7 @@ const ProductsData: ProductsDataModel = {
    furniture: {
       name: 'Пране на мека мебел и килими',
       icon: 'furniture',
+      promo: false,
       included: [
          'Почистване на най-труднодостъпните места, зад и под мебели, под килими, над гардероби и шкафове;',
          'Обезпрашаване на всички вертикални и хоризонтални повърхности;',
@@ -98,6 +104,7 @@ const ProductsData: ProductsDataModel = {
    windows: {
       name: 'Почистване на прозорци',
       icon: 'window',
+      promo: true,
       included: [
          'Почистване на най-труднодостъпните места, зад и под мебели, под килими, над гардероби и шкафове;',
          'Обезпрашаване на всички вертикални и хоризонтални повърхности;',

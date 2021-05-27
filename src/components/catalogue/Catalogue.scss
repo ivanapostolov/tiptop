@@ -44,4 +44,11 @@ $iconSize: 2rem;
       flex-grow: 1;
       margin-left: 1rem;
    }
+
+   .promo {
+      flex-grow: 0;
+      color: $accentColor;
+      font-size: $iconSize;
+      line-height: $iconSize;
+   }
 }

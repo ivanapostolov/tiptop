@@ -6,9 +6,10 @@ export interface ProductProps {
    name: string;
    icon: string;
    link: string;
+   promo: boolean;
 }
 
-const Product: React.FC<ProductProps> = ({ name, icon, link }) => {
+const Product: React.FC<ProductProps> = ({ name, icon, link, promo }) => {
    const iconStyle = {
       backgroundImage: `url("/assets/icons/${icon}.svg")`
    };
@@ -17,6 +18,7 @@ const Product: React.FC<ProductProps> = ({ name, icon, link }) => {
       <Link className="ct__product" to={`/service/${link}`}>
          <div style={iconStyle} className="icon" />
          <div className="text">{ name }</div>
+         {promo && <div className="promo">%</div>}
       </Link>
    );
 }
