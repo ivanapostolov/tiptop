@@ -5,7 +5,7 @@ $logoSize: 2rem;
 
 .nb__navbar {
    @extend .navbar, .navbar-expand-lg, .container-fluid, .user-select-none;
-   background-color: white;//darken($primaryColor, 5%);
+   background-color: white;
    color: $primaryColor !important;
 
    .brand__link {
