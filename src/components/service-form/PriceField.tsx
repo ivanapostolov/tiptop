@@ -6,10 +6,15 @@ interface PriceFieldProps {
 }
 
 const PriceField: React.FC<PriceFieldProps> = ({ price }) => {
+   const formatter = new Intl.NumberFormat('en-US', {
+      minimumFractionDigits: 2,      
+      maximumFractionDigits: 2,
+   });
+
    return (
       <div className="sf__priceField">
          <div className="text">Цена</div>
-         <div className="value">{ price }лв</div>
+         <div className="value">{ formatter.format(price) }лв</div>
       </div>
    );
 }
