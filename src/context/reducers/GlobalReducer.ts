@@ -1,7 +1,12 @@
 import GlobalState from '../models/GlobalState';
 
-const GlobalReducer = (state: GlobalState, action: string) => {
-   switch(action) {
+export interface Action {
+   type: string;
+   props?: any;
+}
+
+const GlobalReducer = (state: GlobalState, action: Action) => {
+   switch(action.type) {
       case 'ADD_SERVICE':
          state = {service: {
             name: "name",

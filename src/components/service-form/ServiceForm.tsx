@@ -23,7 +23,9 @@ const ServiceForm: React.FC<ServiceFormProps> = ({ tag }) => {
 
    const submit = () => {
       if (setState !== undefined && state !== undefined) {
-         setState("ADD_SERVICE");
+         setState({
+            type: "ADD_SERVICE"
+         });
          console.log(state);
       }
    }

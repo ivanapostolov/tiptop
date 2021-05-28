@@ -1,10 +1,10 @@
-import React, { useReducer, useState, Dispatch } from 'react';
+import React, { useReducer } from 'react';
 import GlobalState from './models/GlobalState';
-import GlobalReducer from './reducers/GlobalReducer';
+import GlobalReducer, { Action } from './reducers/GlobalReducer';
 
 interface ContextProps {
    state: GlobalState;
-   setState: React.Dispatch<string>;
+   setState: React.Dispatch<Action>;
 }
 
 export const AppContext = React.createContext<Partial<ContextProps>>({});
