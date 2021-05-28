@@ -4,13 +4,13 @@
 $logoSize: 2rem;
 
 @function HEXtoRGB($hex) {
-   @return red($hex) + ', ' + green($hex) + ', ' + blue($hex);
+   @return '#{red($hex)}, #{green($hex)}, #{blue($hex)}';
 }
 
 .nb__navbar {
-   @extend .navbar, .navbar-expand-lg, .navbar-light, .container-fluid, .user-select-none;
+   @extend .navbar, .navbar-expand-lg, .container-fluid, .user-select-none;
    background-color: white;
-   color: $primaryColor !important;
+   color: $primaryColor;
 
    .brand__link {
       @extend .navbar-brand, .p-0;
@@ -23,7 +23,7 @@ $logoSize: 2rem;
 
       span {
          @extend .navbar-toggler-icon;
-         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28#{HEXtoRGB($primaryColor)}, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28#{HEXtoRGB($primaryColor)}, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
       }
    }
 
@@ -45,11 +45,10 @@ $logoSize: 2rem;
    @extend .d-flex, .flex-row, .align-items-center;
    
    .text {
-      //@include font-size(1.5rem);
       font-family: "Bauhaus";
       letter-spacing: 2px;
       font-size: 1.75rem;
-      color: #0C3E95;
+      color: $primaryColor;
    }
    
    .icon {

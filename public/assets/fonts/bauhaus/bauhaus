@@ -1,4 +1,0 @@
-@font-face {
-  font-family: 'Bauhaus';
-  src: url(/assets/fonts/bauhaus/bauhaus-heavy-bt.ttf) format('truetype');
-}

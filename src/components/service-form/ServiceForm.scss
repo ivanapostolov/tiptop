@@ -2,29 +2,27 @@
 @import '../../variables.scss';
 
 .sf__serviceForm {
-   @extend .container;
+   @extend .container, .d-flex, .justify-content-center, .p-4;
    background-color: $primaryColor;
-   padding: 2rem 2rem;
-   display: flex;
-   justify-content: center;
-}
 
-.sf__housemaid {
-   flex-grow: 1;
-   text-align: center;
-   max-width: 540px;
-   
-   button {
-      padding: 0.5rem 3rem;
-      background-color: $accentColor;
+   .wrapper {
+      flex-grow: 1;
+      text-align: center;
+      max-width: 540px;
+
+      button {
+         padding: 0.5rem 3rem;
+         background-color: $accentColor;
+      }
    }
 }
 
+.sf__housemaid {
+}
+
 .sf__priceField {
-   display: flex;
-   justify-content: space-between;
+   @extend .d-flex, .justify-content-between, .my-3;
    @include font-size(2rem);
-   margin: 1rem 0;
 
    .text {
       color: white;

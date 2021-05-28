@@ -1,11 +1,15 @@
 import React from 'react';
-import './ServiceForm.scss'
+import './ServiceForm.scss';
 
-const PriceField: React.FC = () => {
+interface PriceFieldProps {
+   price: number;
+}
+
+const PriceField: React.FC<PriceFieldProps> = ({ price }) => {
    return (
       <div className="sf__priceField">
          <div className="text">Цена</div>
-         <div className="value">0,00лв</div>
+         <div className="value">{ price }лв</div>
       </div>
    );
 }
