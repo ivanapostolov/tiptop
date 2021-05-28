@@ -12,7 +12,7 @@ const Product: React.FC = () => {
 
    return (
       <div>
-         <ProductInfo name={productData.name} icon={productData.icon} included={productData.included} faq={productData.faq} promo={productData.promo} />
+         <ProductInfo tag={product} name={productData.name} icon={productData.icon} included={productData.included} faq={productData.faq} promo={productData.promo} />
       </div>
    );
 }

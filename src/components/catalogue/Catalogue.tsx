@@ -18,7 +18,7 @@ const Catalogue: React.FC = () => {
       <div className="ct__catalogue">
          <h3>1. Избери услуга</h3>
          <div className="wrapper">
-            {products}
+            { products }
          </div>
       </div>
    );
