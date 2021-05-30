@@ -11,11 +11,12 @@ export const AppContext = React.createContext<Partial<ContextProps>>({});
 
 const initialState: GlobalState = {
    service: {
-      name: "",
-      parameters: "",
-      price: 0
+      discriminator: "Service",
+      label: "",
+      name: ""
    },
    contactData: {
+      discriminator: "ContactData",
       firstName: "",
       lastName: "",
       address: "",

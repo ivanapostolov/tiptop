@@ -1,10 +1,14 @@
+import ServiceData from './ServiceData';
+
 export interface Service {
+   readonly discriminator: 'Service';
    name: string;
-   parameters: any;
-   price: number;
+   label: string;
+   data?: ServiceData;
 }
 
 export interface ContactData {
+   readonly discriminator: 'ContactData';
    firstName: string;
    lastName: string;
    address: string;

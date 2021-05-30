@@ -1,39 +1,40 @@
-import React, { useContext, useEffect, useState } from 'react';
-import Housemaid from './Housemaid';
-import PriceField from './PriceField';
-import {AppContext} from '../../context/Global';
+import React, { useContext } from 'react';
+import HousemaidForm from './HousemaidForm';
+import CleaningForm from './CleaningForm';
+import ProductsData from '../../data/ProductsData';
+import { Service } from '../../context/models/GlobalState';
+import { AppContext } from '../../context/Global';
 import './ServiceForm.scss';
+import ServiceData from '../../context/models/ServiceData';
 
 interface ServiceFormProps {
-   tag: string;
+   label: string;
 }
 
-const ServiceForm: React.FC<ServiceFormProps> = ({ tag }) => {
+const ServiceForm: React.FC<ServiceFormProps> = ({ label }) => {
    const {state, setState} = useContext(AppContext);
 
-   useEffect(() => {
-      console.log(state);
-   }, []);
+   const submit = (data: ServiceData) => {
+      const payload: Service = { 
+         discriminator: "Service", 
+         label: label, 
+         name: ProductsData[label].name, 
+         data: data
+      };
 
-   const [ price, setPrice ] = useState<number>(0);
-
-   const updatePrice = (newPrice: number) => {
-      setPrice(newPrice);
-   }
-
-   const submit = () => {
       if (setState !== undefined && state !== undefined) {
-         setState({
-            type: "ADD_SERVICE"
-         });
+         setState({ type: "ADD_SERVICE", payload: payload });
+
          console.log(state);
       }
    }
 
    const form = (() => {
-      switch(tag) {
+      switch(label) {
          case 'housemaid':
-            return <Housemaid updatePrice={updatePrice} />;
+            return <HousemaidForm submit={submit} />;
+         case 'cleaning':
+            return <CleaningForm submit={submit} />
          default:
             return null;
       }
@@ -41,11 +42,7 @@ const ServiceForm: React.FC<ServiceFormProps> = ({ tag }) => {
 
    return (
       <div className="sf__serviceForm">
-         <div className="wrapper">
-            { form }
-            <PriceField price={price} />
-            <button type="submit" className="btn btn-primary" onClick={submit}>Продължи</button>
-         </div>
+         { form }
       </div>
    );
 }

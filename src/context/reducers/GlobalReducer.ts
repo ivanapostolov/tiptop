@@ -1,18 +1,16 @@
-import GlobalState from '../models/GlobalState';
+import GlobalState, { Service, ContactData} from '../models/GlobalState';
 
 export interface Action {
    type: string;
-   props?: any;
+   payload?: Service | ContactData;
 }
 
-const GlobalReducer = (state: GlobalState, action: Action) => {
+const GlobalReducer = (state: GlobalState, action: Action): GlobalState => {
    switch(action.type) {
       case 'ADD_SERVICE':
-         state = {service: {
-            name: "name",
-            parameters: "23 square meters",
-            price: 24.35
-         }, contactData: state.contactData};
+         if (action.payload?.discriminator === "Service") {
+            state = {service: action.payload, contactData: state.contactData};
+         }
          return state;
       default:
          return state;

@@ -5,11 +5,15 @@ import Inclusions from './Inclusions';
 import FAQs from './FAQs';
 import ServiceForm from '../service-form/ServiceForm';
 
-const ProductInfo: React.FC<ProductDataModel & {tag: string}> = ({ tag, name, icon, faq, included}) => {
+interface ProductInfoProps extends ProductDataModel {
+   label: string
+}
+
+const ProductInfo: React.FC<ProductInfoProps> = ({ label, name, icon, faq, included}) => {
    return (
       <div className="pi__productInfo">
          <ServiceTitle name={name} icon={icon} />
-         <ServiceForm tag={tag} />
+         <ServiceForm label={label} />
          <Inclusions included={included} />
          <FAQs faqs={faq} />
       </div>

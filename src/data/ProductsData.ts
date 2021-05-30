@@ -15,7 +15,7 @@ export interface ProductsDataModel {
    [key: string]: ProductDataModel;
 }
 
-const ProductsData: ProductsDataModel = {
+const ProductsData: Readonly<ProductsDataModel> = {
    housemaid: {
       name: 'Домашни помощници',
       icon: 'cleaning-lady',
