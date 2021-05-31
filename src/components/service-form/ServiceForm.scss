@@ -25,7 +25,17 @@
       color: white;
    }
 
-   .value {
-      color: white;
+   .price {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      .discount {
+         color: rgba(255,255,255,0.7);
+         margin: 0 0.5rem;
+         @include font-size(1rem);
+      }
+      .value {
+         color: white;
+      }
    }
 }

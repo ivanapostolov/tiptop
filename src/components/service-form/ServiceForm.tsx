@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import HousemaidForm from './HousemaidForm';
-import CleaningForm from './CleaningForm';
+import CleaningForm from './AreaForm';
 import ProductsData from '../../data/ProductsData';
 import { Service } from '../../context/models/GlobalState';
 import { AppContext } from '../../context/Global';
@@ -34,7 +34,7 @@ const ServiceForm: React.FC<ServiceFormProps> = ({ label }) => {
          case 'housemaid':
             return <HousemaidForm submit={submit} />;
          case 'cleaning':
-            return <CleaningForm submit={submit} />
+            return <CleaningForm submit={submit} coefficient={2.6} discount={13.33333} />
          default:
             return null;
       }
