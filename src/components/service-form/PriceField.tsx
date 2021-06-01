@@ -1,26 +1,34 @@
 import React from 'react';
 import './ServiceForm.scss';
 
-interface PriceFieldProps {
+export interface PriceFieldProps {
    price: number;
-   originalPrice?: number;
-}
+   discountedPrice?: number;
+};
 
-const PriceField: React.FC<PriceFieldProps> = ({ price, originalPrice }) => {
-   const formatter = new Intl.NumberFormat('en-US', {
-      minimumFractionDigits: 2,      
-      maximumFractionDigits: 2,
-   });
+export const formatter = new Intl.NumberFormat('en-US', {
+   minimumFractionDigits: 2,      
+   maximumFractionDigits: 2,
+});
 
-   const priceValue = !isNaN(price) ? price : 0;
+const PriceField: React.FC<PriceFieldProps> = ({ price, discountedPrice }) => {
+   const priceBox = ( discountedPrice !== undefined ?
+      <div className="discount__wrapper">
+         <span className="discount text-decoration-line-through">
+            { formatter.format(!isNaN(price) ? price : 0) }
+         </span>
+         <div className="value">
+            { formatter.format(!isNaN(discountedPrice) ? discountedPrice : 0) }лв
+         </div>
+      </div> : <div className="value">
+         { formatter.format(!isNaN(price) ? price : 0) }лв
+      </div>
+   );
 
    return (
       <div className="sf__priceField">
          <div className="text">Цена</div>
-         <div className="price">
-            { originalPrice !== undefined && <span className="discount text-decoration-line-through">{ formatter.format(originalPrice) }</span> }
-            <div className="value">{ formatter.format(priceValue) }лв</div>
-         </div>
+         { priceBox }
       </div>
    );
 }

@@ -25,7 +25,7 @@
       color: white;
    }
 
-   .price {
+   .discount__wrapper {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
@@ -34,8 +34,9 @@
          margin: 0 0.5rem;
          @include font-size(1rem);
       }
-      .value {
-         color: white;
-      }
+   }
+
+   .value {
+      color: white;
    }
 }
