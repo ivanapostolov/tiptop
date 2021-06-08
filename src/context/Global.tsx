@@ -21,6 +21,7 @@ const initialState: GlobalState = {
       lastName: "",
       address: "",
       date: "",
+      comment: "",
       phone: ""
    }
 }
@@ -31,7 +32,7 @@ interface GlobalProviderProps {
 }
 
 export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children, value }) => {
-   const [globalState, globalDispatch] = useReducer(GlobalReducer, initialState);
+   const [ globalState, globalDispatch ] = useReducer(GlobalReducer, initialState);
 
    return (
       <AppContext.Provider value={{ state: globalState, setState: globalDispatch }}>

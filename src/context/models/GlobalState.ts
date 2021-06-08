@@ -13,6 +13,7 @@ export interface ContactData {
    lastName: string;
    address: string;
    date: string;
+   comment: string;
    phone: string;
 }
 

@@ -6,6 +6,7 @@ import { AppContext } from '../../context/Global';
 import './ServiceForm.scss';
 import ServiceData from '../../context/models/ServiceData';
 import AreaForm from './AreaForm';
+import WindowsForm from './WindowsForm';
 
 interface ServiceFormProps {
    label: string;
@@ -35,8 +36,12 @@ const ServiceForm: React.FC<ServiceFormProps> = ({ label }) => {
             return <HousemaidForm submit={submit} />;
          case 'cleaning':
             return <AreaForm submit={submit} coefficient={3.5} discountedCoefficient={2.8} />
+         case 'tenants':
+            return <AreaForm submit={submit} coefficient={3.2} />
          case 'renovation':
             return <AreaForm submit={submit} coefficient={2.9} />
+         case 'windows':
+            return <WindowsForm submit={submit} />
          default:
             return null;
       }

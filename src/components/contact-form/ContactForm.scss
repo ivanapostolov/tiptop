@@ -1,0 +1,14 @@
+@import '../../../bootstrap/scss/bootstrap.scss';
+@import '../../variables.scss';
+
+.cf__contactForm {
+   @extend .container;
+   max-width: 540px;
+   text-align: center;
+
+   .heading {
+      @include font-size(1.5rem);
+      color: $primaryColor;
+      margin: 1rem 0;
+   }
+}

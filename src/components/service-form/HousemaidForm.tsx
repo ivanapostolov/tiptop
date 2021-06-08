@@ -3,6 +3,7 @@ import FormProps from './FormProps';
 import PriceField from './PriceField';
 import ServiceData from '../../context/models/ServiceData';
 import './ServiceForm.scss';
+import { Link } from 'react-router-dom';
 
 interface Option {
    value: string;
@@ -11,8 +12,8 @@ interface Option {
 };
 
 const options: Option[] = [
-   {value: "once", label: "Еднократно", price: 65},
-   {value: "subscription", label: "Абонамент", price: 59}
+   {value: "subscription", label: "Абонамент", price: 59},
+   {value: "once", label: "Еднократно", price: 65}
 ];
 
 const HousemaidForm: React.FC<FormProps> = ({ submit }) => {
@@ -48,8 +49,8 @@ const HousemaidForm: React.FC<FormProps> = ({ submit }) => {
                <option key={id} value={option.value}>{option.label}</option>
             )}
          </select>
-         <PriceField price={choice.price} />
-         <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Продължи</button>
+         <PriceField discountedPrice={choice.price} price={choice.price + 10} />
+         <Link to='/contact-data' type="submit" className="continue btn btn-primary" onClick={() => handleSubmit}>Продължи</Link>
       </form>
    );
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FormProps from './FormProps';
 import ServiceData from '../../context/models/ServiceData';
 import PriceField, {PriceFieldProps} from './PriceField';
+import { Link } from 'react-router-dom';
 
 interface AreaFormProps extends FormProps {
    coefficient: number;
@@ -51,7 +52,7 @@ const AreaForm: React.FC<AreaFormProps> = ({ submit, coefficient, discountedCoef
             <span className="input-group-text">m<sup>2</sup></span>
          </div>
          <PriceField { ...getPriceFieldProps(parseInt(areaInput)) } />
-         <button type="submit" className="btn btn-primary" onClick={ handleSubmit }>Продължи</button>
+         <Link to='/contact-data' type="submit" className="continue btn btn-primary" onClick={() => handleSubmit}>Продължи</Link>
       </form>
    );
 }

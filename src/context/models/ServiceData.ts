@@ -13,6 +13,16 @@ interface AreaData extends BaseData {
    area: number;
 }
 
-type ServiceData = HousemaidData | AreaData;
+interface WindowsData extends BaseData {
+   readonly discriminator: 'WindowsData';
+   small: number;
+   big: number;
+   doors: number;
+   smallBlinds: number;
+   bigBlinds: number;
+   doorBlinds: number;
+}
+
+type ServiceData = HousemaidData | AreaData | WindowsData;
 
 export default ServiceData;

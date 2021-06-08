@@ -9,11 +9,11 @@ const Features: React.FC = () => {
          icon: "quality"
       }, {
          title: "Бързо и лесно",
-         content: "Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.",
+         content: "Резервирай почистване само с няколко клика и се наслади на чист дом !",
          icon: "fast"
       }, {
          title: "Ниски цени",
-         content: "Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.",
+         content: "Ежедневно преглеждаме конкуренцията и се стремим да ви предлагаме по-ниски цени !",
          icon: "cheap"
       }
    ];
