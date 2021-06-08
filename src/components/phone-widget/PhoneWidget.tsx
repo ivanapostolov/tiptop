@@ -7,9 +7,9 @@ const PhoneWidget: React.FC = () => {
    };
 
    return (
-      <div className="pw__phoneWidget">
+      <a href="tel:+359-88-902-2555" className="pw__phoneWidget">
          <div className="icon" style={iconStyle}/>
-      </div>
+      </a>
    );
 }
 
