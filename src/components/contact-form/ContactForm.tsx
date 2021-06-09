@@ -165,6 +165,10 @@ const ContactForm: React.FC = () => {
       }
    }
 
+   const validate = () => {
+      return firstName !== '' && lastName !== '' && address !== '' && date !== '' && phone !== '';
+   }
+
    return (
       <div className="cf__contactForm pb-3">
          <div className="heading">Информация за контакт</div>
@@ -201,7 +205,7 @@ const ContactForm: React.FC = () => {
                <label htmlFor="phone">Телефон</label>
             </div>
 
-            <FormSubmitButton enabled={true} submit={submit} />
+            <FormSubmitButton enabled={validate()} submit={submit} />
          </form>
       </div>
    );
