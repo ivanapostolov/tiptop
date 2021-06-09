@@ -12,11 +12,11 @@ const Conformation: React.FC = () => {
    const contactData = state?.contactData;
 
    const sendRequest = async (body: any) => {
-      const url = 'https://tiptop-backend.herokuapp.com/api/order';
+      const url = 'http://84.54.147.204:3000/api/order';//'https://tiptop-backend.herokuapp.com/api/order';
 
       const rawResponse = await fetch(url, {
          method: 'POST',
-         mode: "no-cors",
+         mode: "cors",
          headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -34,11 +34,11 @@ const Conformation: React.FC = () => {
    const submit = () => {
       sendRequest(state).then(res => {
          console.log(res);
+
+         alert("Успешно завършена поръчка");
       }).catch(err => {
          console.log(err);
       });
-
-      alert("Успешно завършена поръчка");
    }
    
    return (
