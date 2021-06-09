@@ -124,7 +124,7 @@ const ContactForm: React.FC = () => {
          current.setDate(current.getDate() + 1);
       }
 
-      console.log(format(current));
+      //console.log(format(current));
 
       return current;
    }
@@ -133,7 +133,7 @@ const ContactForm: React.FC = () => {
       const min = getMinDate();
 
       min.setDate(min.getDate() + 30);
-      console.log(format(min));
+      //console.log(format(min));
       return min;
    }
 
