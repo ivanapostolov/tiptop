@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FormProps from './FormProps';
 import ServiceData from '../../context/models/ServiceData';
 import PriceField, {PriceFieldProps} from './PriceField';
-import { Link } from 'react-router-dom';
+import FormSubmitButton from './FormSubmitButton';
 
 interface AreaFormProps extends FormProps {
    coefficient: number;
@@ -22,20 +22,20 @@ const AreaForm: React.FC<AreaFormProps> = ({ submit, coefficient, discountedCoef
       }
    }
 
-   const handleSubmit: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-      e.preventDefault();
-
+   const handleSubmit = () => {
       const area = parseInt(areaInput);
 
-      if (regex.test(areaInput) && !isNaN(area)) {
-         const data: ServiceData = {
-            discriminator: "AreaData",
-            area: area,
-            price: area * (discountedCoefficient ? discountedCoefficient : coefficient)
-         };
+      const data: ServiceData = {
+         discriminator: "AreaData",
+         area: area,
+         price: area * (discountedCoefficient ? discountedCoefficient : coefficient)
+      };
 
-         submit(data);
-      }
+      submit(data);
+   }
+
+   const validate = (): boolean => {
+      return regex.test(areaInput) && !isNaN(parseInt(areaInput));
    }
 
    const getPriceFieldProps = (area: number): PriceFieldProps => {
@@ -52,7 +52,8 @@ const AreaForm: React.FC<AreaFormProps> = ({ submit, coefficient, discountedCoef
             <span className="input-group-text">m<sup>2</sup></span>
          </div>
          <PriceField { ...getPriceFieldProps(parseInt(areaInput)) } />
-         <Link to='/contact-data' type="submit" className="continue btn btn-primary" onClick={() => handleSubmit}>Продължи</Link>
+
+         <FormSubmitButton enabled={validate()} submit={handleSubmit} />
       </form>
    );
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ServiceData from '../../context/models/ServiceData';
 import FormProps from './FormProps';
+import FormSubmitButton from './FormSubmitButton';
 import PriceField from './PriceField';
 import './ServiceForm.scss';
 
@@ -44,23 +45,23 @@ const WindowsForm: React.FC<FormProps> = ({ submit }) => {
 
    const price = 5 * (glassDoorsBlinds + bigWindowsBlinds + smallWindowsBlinds) + 3 * smallWindows + 6 * bigWindows + 5 * glassDoors;
 
-   const handleSubmit: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-      e.preventDefault();
+   const handleSubmit = () => {
+      const data: ServiceData = {
+         discriminator: "WindowsData",
+         small: smallWindows,
+         big: bigWindows,
+         doors: glassDoors,
+         bigBlinds: bigWindowsBlinds,
+         smallBlinds: smallWindowsBlinds,
+         doorBlinds: glassDoorsBlinds,
+         price: price
+      };
+      
+      submit(data);
+   }
 
-      if (price > 0) {
-         const data: ServiceData = {
-            discriminator: "WindowsData",
-            small: smallWindows,
-            big: bigWindows,
-            doors: glassDoors,
-            bigBlinds: bigWindowsBlinds,
-            smallBlinds: smallWindowsBlinds,
-            doorBlinds: glassDoorsBlinds,
-            price: price
-         };
-
-         submit(data);
-      }
+   const validate = (): boolean => {
+      return price > 0;
    }
 
    return (
@@ -103,8 +104,10 @@ const WindowsForm: React.FC<FormProps> = ({ submit }) => {
                </div>
             </div>
          </div>
+
          <PriceField price={ price } />
-         <Link to='/contact-data' type="submit" className="continue btn btn-primary" onClick={() => handleSubmit}>Продължи</Link>
+
+         <FormSubmitButton enabled={ validate() } submit={handleSubmit} />
       </form>
    );
 }

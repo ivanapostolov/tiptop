@@ -4,6 +4,7 @@ import PriceField from './PriceField';
 import ServiceData from '../../context/models/ServiceData';
 import './ServiceForm.scss';
 import { Link } from 'react-router-dom';
+import FormSubmitButton from './FormSubmitButton';
 
 interface Option {
    value: string;
@@ -29,9 +30,7 @@ const HousemaidForm: React.FC<FormProps> = ({ submit }) => {
       }
    };
 
-   const handleSubmit: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-      e.preventDefault();
-
+   const handleSubmit = () => {
       const data: ServiceData = {
          discriminator: "HousemaidData",
          plan: choice.value, 
@@ -49,8 +48,10 @@ const HousemaidForm: React.FC<FormProps> = ({ submit }) => {
                <option key={id} value={option.value}>{option.label}</option>
             )}
          </select>
+
          <PriceField discountedPrice={choice.price} price={choice.price + 10} />
-         <Link to='/contact-data' type="submit" className="continue btn btn-primary" onClick={() => handleSubmit}>Продължи</Link>
+
+         <FormSubmitButton enabled={true} submit={handleSubmit} />
       </form>
    );
 }

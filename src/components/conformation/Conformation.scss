@@ -1,0 +1,12 @@
+@import '../../../bootstrap/scss/bootstrap.scss';
+@import '../../variables.scss';
+
+.cf__conformation {
+   @extend .container;
+   text-align: center;
+   max-width: 540px;
+
+   table {
+      text-align: left;
+   };
+}

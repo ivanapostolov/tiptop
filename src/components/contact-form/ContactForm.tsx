@@ -1,4 +1,5 @@
 import React from 'react';
+import FormSubmitButton from './FormSubmitButton';
 import './ContactForm.scss';
 
 const neighbourhoods = [
@@ -101,6 +102,8 @@ const ContactForm: React.FC = () => {
                <input type="tel" className="form-control" id="phone" placeholder="Телефон" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" />
                <label htmlFor="phone">Телефон</label>
             </div>
+
+            <FormSubmitButton enabled={true} submit={() => {}} />
          </form>
       </div>
    );

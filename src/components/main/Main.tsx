@@ -4,6 +4,7 @@ import Home from '../home/Home';
 import About from '../about/About';
 import Product from '../product/Product';
 import ContactForm from '../contact-form/ContactForm';
+import Conformation from '../conformation/Conformation';
 
 const Main: React.FC = () => {
    return (
@@ -12,6 +13,7 @@ const Main: React.FC = () => {
          <Route path="/about" exact component={About} />
          <Route path="/service/:product" exact component={Product} />
          <Route path="/contact-data" exact component={ContactForm} />
+         <Route path="/conformation" exact component={Conformation} />
       </Switch>
    );
 }
