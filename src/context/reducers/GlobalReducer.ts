@@ -12,6 +12,11 @@ const GlobalReducer = (state: GlobalState, action: Action): GlobalState => {
             state = {service: action.payload, contactData: state.contactData};
          }
          return state;
+      case 'ADD_CONTACT_DATA':
+         if (action.payload?.discriminator === 'ContactData') {
+            state = {service: state.service, contactData: action.payload};
+         }
+         return state;
       default:
          return state;
    }

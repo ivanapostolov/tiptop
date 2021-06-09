@@ -6,7 +6,18 @@
    text-align: center;
    max-width: 540px;
 
+   .heading {
+      @include font-size(1.5rem);
+      margin: 1rem 0;
+      color: $primaryColor;
+   }
+
    table {
       text-align: left;
    };
+
+   .continue {
+      padding: 0.5rem 3rem;
+      background-color: $accentColor;
+   }
 }
