@@ -120,7 +120,7 @@ const ContactForm: React.FC = () => {
 
       const current = new Date(utc + (3600000 * offset));
 
-      if (current.getHours() >= 17) {
+      if (current.getHours() >= 15) {
          current.setDate(current.getDate() + 1);
       }
 
