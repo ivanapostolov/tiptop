@@ -47,7 +47,7 @@ const Conformation: React.FC = () => {
          { service && <ServiceTable name={service.name} data={service.data} /> }
          <div className="heading">Данни за контакт</div>
          { contactData && <ContactDataTable {...contactData} /> }
-         <Link to='/' className="continue btn btn-primary" onClick={submit}>Продължи</Link> 
+         <Link to='/' className="continue btn btn-primary" onClick={submit}>Изпрати</Link> 
       </div>
    );
 }

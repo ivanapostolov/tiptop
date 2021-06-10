@@ -15,23 +15,13 @@ interface QuantityButtonProps {
    def: string;
 }
 
-const QuantityButton: React.FC<QuantityButtonProps> = ({ value, increment, decrement, singular, plural, def}) => {
+export const QuantityButton: React.FC<QuantityButtonProps> = ({ value, increment, decrement, singular, plural, def}) => {
    return (
       <div className="sf__quantityButton button" role="group">
          <button type="button" className="control__btn" onClick={() => {value > 0 ? decrement() : null}}>-</button>
          <div>{value > 0 && value} {value > 0 ? (value === 1 ? singular : plural) : def}</div>
          <button type="button" className="control__btn" onClick={increment}>+</button>
       </div>
-   );
-}
-
-interface WindowsFormItemProps extends QuantityButtonProps {
-   title: string;
-}
-
-const WindowsFormItem: React.FC<WindowsFormItemProps> = ({title, value, increment, decrement, singular, plural}) => {
-   return (
-      <></>
    );
 }
 

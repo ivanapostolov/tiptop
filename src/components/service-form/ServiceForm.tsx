@@ -7,6 +7,7 @@ import './ServiceForm.scss';
 import ServiceData from '../../context/models/ServiceData';
 import AreaForm from './AreaForm';
 import WindowsForm from './WindowsForm';
+import UpholsteredFurnitureForm from './UpholsteredFurnitureForm';
 
 interface ServiceFormProps {
    label: string;
@@ -40,6 +41,8 @@ const ServiceForm: React.FC<ServiceFormProps> = ({ label }) => {
             return <AreaForm submit={submit} coefficient={3.2} />
          case 'renovation':
             return <AreaForm submit={submit} coefficient={2.9} />
+         case 'furniture':
+            return <UpholsteredFurnitureForm submit={submit} />
          case 'windows':
             return <WindowsForm submit={submit} />
          default:
