@@ -8,6 +8,7 @@ import Conformation from '../conformation/Conformation';
 
 const Main: React.FC = () => {
    return (
+      <div className="flex-shrink-0">
       <Switch>
          <Route path="/" exact component={Home} />
          <Route path="/about" exact component={About} />
@@ -15,6 +16,7 @@ const Main: React.FC = () => {
          <Route path="/contact-data" exact component={ContactForm} />
          <Route path="/conformation" exact component={Conformation} />
       </Switch>
+      </div>
    );
 }
 
