@@ -2,7 +2,10 @@
 @import './variables.scss';
 
 body {
-   //@extend .d-flex, .flex-column, .h-100;
-   @extend .user-select-none;
+   @extend .user-select-none, .h-100;
    background-color: $backgroundColor;
+
+   .root {
+      @extend .d-flex, .flex-column, .h-100
+   }
 }

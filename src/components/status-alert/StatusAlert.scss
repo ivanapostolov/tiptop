@@ -1,0 +1,33 @@
+@import '../../../bootstrap/scss/bootstrap.scss';
+@import '../../variables.scss';
+
+.sa__StatusAlert {
+   @extend .h-100;
+   display: flex;
+   justify-content: center;
+   padding-top: 1.5rem;
+
+   .spinner {
+      @extend .spinner-border;
+      margin-top: 3rem;
+
+      span { @extend .visually-hidden; }
+   }
+
+   .success {
+      display: flex;
+      flex-direction: column;
+   }
+}
+
+.sa__SuccessAlert {
+   @extend .alert, .alert-success;
+}
+
+.sa__CalendarAlert {
+   @extend .alert, .alert-primary;
+}
+
+.sa__FailureAlert {
+   @extend .alert, .alert-danger;
+}

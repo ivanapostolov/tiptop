@@ -20,7 +20,8 @@ const ServiceForm: React.FC<ServiceFormProps> = ({ label }) => {
       const payload: Service = { 
          discriminator: "Service", 
          label: label, 
-         name: ProductsData[label].name, 
+         name: ProductsData[label].name,
+         duration: ProductsData[label].duration,
          data: data
       };
 

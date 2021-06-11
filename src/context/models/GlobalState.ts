@@ -4,6 +4,7 @@ export interface Service {
    readonly discriminator: 'Service';
    name: string;
    label: string;
+   duration: number;
    data?: ServiceData;
 }
 

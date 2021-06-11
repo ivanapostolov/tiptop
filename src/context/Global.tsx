@@ -13,7 +13,8 @@ const initialState: GlobalState = {
    service: {
       discriminator: "Service",
       label: "",
-      name: ""
+      name: "",
+      duration: 0
    },
    contactData: {
       discriminator: "ContactData",

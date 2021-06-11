@@ -1,20 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AppContext } from '../../context/Global';
 import ServiceTable from './ServiceTable';
 import './Conformation.scss';
 import ContactDataTable from './ContactDataTable';
 import { Link } from 'react-router-dom';
+import StatusAlert, { Status } from '../status-alert/StatusAlert';
 
 const Conformation: React.FC = () => {
+   const [ status, setStatus ] = useState<Status>(Status.None);
+
    const {state, setState} = useContext(AppContext);
 
    const service = state?.service;
    const contactData = state?.contactData;
 
    const sendRequest = async (body: any) => {
+      /*'http://84.54.147.204:3000/api/order';*/
       const url = 'https://tiptop-backend.herokuapp.com/api/order';
-
-      const rawResponse = await fetch(url, {
+      
+      const rawResponse: Response = await fetch(url, {
          method: 'POST',
          mode: "cors",
          headers: {
@@ -23,32 +27,40 @@ const Conformation: React.FC = () => {
          },
          body: JSON.stringify(body)
       });
-      
-      const content = await rawResponse.json();
-      
-      //console.log(content);
 
-      return content;
+      if (rawResponse.ok) {
+         return 'Success';
+      } else {
+         throw 'Server Error';
+      }
    }
 
    const submit = () => {
-      sendRequest(state).then(res => {
-         console.log(res);
+      setStatus(Status.Waiting);
 
-         alert("Успешно завършена поръчка");
+      sendRequest(state).then(res => {
+         setStatus(Status.Success);
       }).catch(err => {
-         console.log(err);
+         setStatus(Status.Failure);
+
+         console.error(err);
       });
    }
+
+   const conformation = <div className="cf__conformation">
+   <div className="heading">Услуга</div>
+   { service && <ServiceTable name={service.name} data={service.data} /> }
+   <div className="heading">Данни за контакт</div>
+   { contactData && <ContactDataTable {...contactData} /> }
+   <button className="continue btn btn-primary" onClick={submit}>Изпрати</button> 
+</div>
+
+const render = status === Status.None ? conformation : <StatusAlert status={status} />
    
    return (
-      <div className="cf__conformation">
-         <div className="heading">Услуга</div>
-         { service && <ServiceTable name={service.name} data={service.data} /> }
-         <div className="heading">Данни за контакт</div>
-         { contactData && <ContactDataTable {...contactData} /> }
-         <Link to='/' className="continue btn btn-primary" onClick={submit}>Изпрати</Link> 
-      </div>
+      <>
+      { render }
+      </>
    );
 }
 

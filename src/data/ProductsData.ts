@@ -6,6 +6,7 @@ export interface QuestionModel {
 export interface ProductDataModel {
    name: string;
    icon: string;
+   duration: number;
    promo: boolean;
    included: string[];
    faq: QuestionModel[];
@@ -19,6 +20,7 @@ const ProductsData: Readonly<ProductsDataModel> = {
    housemaid: {
       name: 'Домашни помощници',
       icon: 'cleaning-lady',
+      duration: 4,
       promo: true,
       included: [
          'Почистване',
@@ -48,6 +50,7 @@ const ProductsData: Readonly<ProductsDataModel> = {
    cleaning: {
       name: 'Основно почистване',
       icon: 'cleaning',
+      duration: 8,
       promo: true,
       included: [
          'ВЪВ ВСИЧКИ ПОМЕЩЕНИЯ: Почистване на най-труднодостъпните места, зад и под мебели, под килими, над гардероби и шкафове; Обезпрашаване на всички вертикални и хоризонтални повърхности; Двустранно измиване на прозорци, дограми и щори;',
@@ -59,6 +62,7 @@ const ProductsData: Readonly<ProductsDataModel> = {
    tenants: {
       name: 'Почистване преди/след наематели',
       icon: 'couple',
+      duration: 8,
       promo: false,
       included: [
          'ВЪВ ВСИЧКИ ПОМЕЩЕНИЯ: Почистване на най-труднодостъпните места, зад и под мебели, под килими, над гардероби и шкафове. Двустранно измиване на прозорци, дограми и щори.',
@@ -73,6 +77,7 @@ const ProductsData: Readonly<ProductsDataModel> = {
       name: 'Почистване след ремонт',
       icon: 'renovation',
       promo: false,
+      duration: 8,
       included: [
          'Обезпрашаване',
          'Почистване на дограми и прозорци (двустранно)',
@@ -89,6 +94,7 @@ const ProductsData: Readonly<ProductsDataModel> = {
       name: 'Пране на мека мебел и килими',
       icon: 'furniture',
       promo: false,
+      duration: 8,
       included: [
          'Пране на тапицерии на дивани и фотьойли',
          'Изпиране на тапицерии на столове и табуретки',
@@ -107,6 +113,7 @@ const ProductsData: Readonly<ProductsDataModel> = {
       name: 'Почистване на прозорци',
       icon: 'window',
       promo: true,
+      duration: 4,
       included: [
          'Прозорци (двустранно) и дограма',
          'Щори',
