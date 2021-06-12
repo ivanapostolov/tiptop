@@ -1,0 +1,72 @@
+@import '../../../bootstrap/scss/bootstrap.scss';
+@import '../../variables.scss';
+
+$width: 294px; //hould be sth that could be divided in 7
+$daysPadding: 7px; //Padding sitting on both sides of day widget
+
+@function getShift($shift) {
+   @return -$width * $shift;
+}
+
+.dp__DatePicker {
+   width: $width;
+
+   .days__container {
+      overflow: hidden;
+
+      .days {
+         @extend .d-flex, .flex-row, .position-relative;
+         transition: all 0.5s ease;
+      }
+
+      .shift-0 { left: 0 }
+      .shift-1 { left: -$width }
+      .shift-2 { left: -$width * 2 }
+      .shift-3 { left: -$width * 3 }
+   }
+}
+
+.dp__Header {
+   @extend .d-flex, .flex-row, .justify-content-between, .align-items-center, .mb-2;
+   @include font-size(1rem);
+
+   .button {
+      width: 25px;
+      height: 25px;
+      fill: currentColor;
+      cursor: pointer;
+   }
+}
+
+.dp__Day {
+   @extend .d-flex, .flex-column, .align-items-center;
+   font-weight: 100;
+   padding: 0 $daysPadding;
+   
+   .weekday {
+      margin-bottom: 2px;
+      font-size: 0.75rem;
+      color: $primaryColor;
+   }
+   
+   .number {
+      @extend .d-flex, .justify-content-center, .align-items-center;
+      height: $width / 7 - 2 * $daysPadding;
+      width: $width / 7 - 2 * $daysPadding;
+      border-radius: 50%;
+   }
+   
+   .chosen {
+      background-color: $primaryColor !important;
+      color: white;
+   }
+}
+
+.dp__Day.active {
+   font-weight: 400!important;
+   cursor: pointer;
+}
+
+.dp__Day.active:hover .number {
+   background-color: #e0e0e0;
+}

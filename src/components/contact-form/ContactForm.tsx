@@ -3,6 +3,8 @@ import FormSubmitButton from './FormSubmitButton';
 import './ContactForm.scss';
 import { AppContext } from '../../context/Global';
 import { ContactData } from '../../context/models/GlobalState';
+import DatePicker, { getInitialDay } from '../date-picker/DatePicker';
+import TimePicker, { getInitialHour } from '../time-picker/TimePicker';
 
 const neighbourhoods = [
    'Аерогара София',
@@ -75,9 +77,12 @@ const ContactForm: React.FC = () => {
    const [ firstName, setFirstName ] = useState<string>('');
    const [ lastName, setLastName ] = useState<string>('');
    const [ address, setAddress ] = useState<string>('');
-   const [ date, setDate ] = useState<string>('');
    const [ comment, setComment ] = useState<string>('');
    const [ phone, setPhone ] = useState<string>('');
+   const [ day, setDay ] = useState(getInitialDay());
+   const [ hour, setHour ] = useState(getInitialHour());
+
+   //console.log(new Date(`${day} ${hour}:00`));
 
    const handleChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (e) => {
       switch(e.currentTarget.id) {
@@ -90,9 +95,6 @@ const ContactForm: React.FC = () => {
          case 'address':
             setAddress(e.currentTarget.value);
             break;
-         case 'date':
-            setDate(e.currentTarget.value);
-            break;
          case 'comment':
             setComment(e.currentTarget.value);
             break;
@@ -101,7 +103,6 @@ const ContactForm: React.FC = () => {
             break;
          default: break;
       }
-      //console.log(e.currentTarget.value);
    }
 
    const format = (_date: Date): string => {
@@ -111,49 +112,13 @@ const ContactForm: React.FC = () => {
       return `${year}-${month}-${day}T08:30`;
    }
 
-   const getMinDate = () => {
-      const offset = 3; // for Sofia
-
-      const local = new Date();
-
-      const utc = local.getTime() + (local.getTimezoneOffset() * 60000);
-
-      const current = new Date(utc + (3600000 * offset));
-
-      if (current.getHours() >= 15) {
-         current.setDate(current.getDate() + 1);
-      }
-
-      //console.log(format(current));
-
-      return current;
-   }
-
-   const getMaxDate = () => {
-      const min = getMinDate();
-
-      min.setDate(min.getDate() + 30);
-      //console.log(format(min));
-      return min;
-   }
-
-   /*console.log(getMinDate().toDateString())
-   console.log(getMinDate().toISOString())
-   console.log(getMinDate().toLocaleDateString())
-   console.log(getMinDate().toLocaleString())
-   console.log(getMinDate().toUTCString())
-   console.log(getMinDate().toLocaleTimeString())
-   console.log(getMinDate().toTimeString())
-   console.log(getMinDate().toString())*/
-   //console.log(new Date);
-
    const submit = () => {
       const payload: ContactData = { 
          discriminator: "ContactData", 
          firstName: firstName,
          lastName: lastName,
          address: address,
-         date: date,
+         date: `${day} ${hour}`,
          comment: comment,
          phone: phone,
       };
@@ -166,7 +131,7 @@ const ContactForm: React.FC = () => {
    }
 
    const validate = () => {
-      return firstName !== '' && lastName !== '' && address !== '' && date !== '' && phone !== '';
+      return firstName !== '' && lastName !== '' && address !== '' && phone !== '';
    }
 
    return (
@@ -182,20 +147,20 @@ const ContactForm: React.FC = () => {
                <input type="text" className="form-control" id="last_name" value={lastName} onChange={handleChange} placeholder="Фамилия" />
                <label htmlFor="last_name">Фамилия</label>
             </div>
-            {/*<div className="form-floating mb-3">
-               <select className="form-select" id="floatingSelect" aria-label="Floating label select example">
-                  { neighbourhoods.map(e => <option value={e}>{e}</option>) }
-               </select>
-               <label htmlFor="floatingSelect">Квартал</label>
-            </div>*/}
             <div className="form-floating mb-3">
                <input type="text" className="form-control" id="address" value={address} onChange={handleChange} placeholder="Адрес" />
                <label htmlFor="address">Адрес</label>
             </div>
-            <div className="form-floating mb-3">
-               <input type="datetime-local" className="form-control" id="date" value={date} onChange={handleChange} min={format(getMinDate())} max={format(getMaxDate())} />
-               <label htmlFor="date">Дата на посещението</label>
+            <div className="date__picker mb-3">
+               <div className="title">Избери дата</div>
+               <DatePicker choice={day} setChoice={setDay} />
             </div>
+            {
+               state?.service.label === 'housemaid' && <div className="date__picker mb-3">
+                  <div className="title">Избери начален час</div>
+                  <TimePicker choice={hour} setChoice={setHour} />
+               </div>
+            }
             <div className="form-floating mb-3">
                <textarea className="form-control" id="comment" style={{height: "100px"}} value={comment} onChange={handleChange} placeholder="Коментар" />
                <label htmlFor="comment">Коментар</label>

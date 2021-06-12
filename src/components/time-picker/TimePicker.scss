@@ -1,0 +1,24 @@
+@import '../../../bootstrap/scss/bootstrap.scss';
+@import '../../variables.scss';
+
+$width: 294px;
+
+.tp__timePicker {
+   @extend .w-100, .d-flex, .flex-wrap, ;
+   max-width: $width;
+}
+
+.tp__TimeWidget {
+   @extend .text-center, .border, .border-dark, .rounded;
+   @include font-size(0.875rem);
+   width: $width / 3 - 16px;
+   margin: 4px 8px;
+   padding: 6px 0;
+   line-height: 1;
+   cursor: pointer;
+}
+
+.tp__TimeWidget.chosen {
+   background-color: $primaryColor;
+   color: white;
+}

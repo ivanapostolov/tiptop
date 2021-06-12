@@ -12,11 +12,7 @@ const formatGoogleDate = (date: Date): string => {
       return ("0" + digit).slice(-2);
    }
 
-   if (date !== undefined) {
-      return `${date.getFullYear()}${getTwoDigit(date.getMonth() + 1)}${getTwoDigit(date.getDate())}T${getTwoDigit(date.getHours() - 3)}${getTwoDigit(date.getMinutes())}00Z`;
-   } else {
-      return '';
-   }
+   return `${date.getFullYear()}${getTwoDigit(date.getMonth() + 1)}${getTwoDigit(date.getDate())}T${getTwoDigit(date.getHours() - 3)}${getTwoDigit(date.getMinutes())}00Z`;
 }
 
 const CalendarAlert: React.FC<CalendarAlertProps> = ({startDate, endDate, details, location}) => {

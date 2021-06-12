@@ -5,6 +5,8 @@ import About from '../about/About';
 import Product from '../product/Product';
 import ContactForm from '../contact-form/ContactForm';
 import Conformation from '../conformation/Conformation';
+import DP from '../date-picker/DatePicker';
+import TP from '../time-picker/TimePicker';
 
 const Main: React.FC = () => {
    return (

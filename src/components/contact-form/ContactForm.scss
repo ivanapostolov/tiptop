@@ -12,6 +12,22 @@
       margin: 1rem 0;
    }
 
+   form {
+      .date__picker {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+
+         .title {
+            width: 100%;
+            text-align: left;
+            @include font-size(1.5rem);
+            margin-bottom: 8px;
+         }
+      }
+   }
+
    .continue {
       padding: 0.5rem 3rem;
       background-color: $accentColor;
