@@ -13,8 +13,8 @@ interface Option {
 };
 
 const options: Option[] = [
-   {value: "subscription", label: "Абонамент", price: 59},
-   {value: "once", label: "Еднократно", price: 65}
+   {value: "subscription", label: "Абонамент", price: 49},
+   {value: "once", label: "Еднократно", price: 59}
 ];
 
 const HousemaidForm: React.FC<FormProps> = ({ submit }) => {

@@ -19,10 +19,10 @@ $daysPadding: 7px; //Padding sitting on both sides of day widget
          transition: all 0.5s ease;
       }
 
-      .shift-0 { left: 0 }
-      .shift-1 { left: -$width }
-      .shift-2 { left: -$width * 2 }
-      .shift-3 { left: -$width * 3 }
+      .shift-0 { left: getShift(0) }
+      .shift-1 { left: getShift(1) }
+      .shift-2 { left: getShift(2) }
+      .shift-3 { left: getShift(3) }
    }
 }
 
@@ -50,10 +50,9 @@ $daysPadding: 7px; //Padding sitting on both sides of day widget
    }
    
    .number {
-      @extend .d-flex, .justify-content-center, .align-items-center;
+      @extend .d-flex, .justify-content-center, .align-items-center, .rounded-circle;
       height: $width / 7 - 2 * $daysPadding;
       width: $width / 7 - 2 * $daysPadding;
-      border-radius: 50%;
    }
    
    .chosen {

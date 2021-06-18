@@ -48,14 +48,14 @@ const Conformation: React.FC = () => {
    }
 
    const conformation = <div className="cf__conformation">
-   <div className="heading">Услуга</div>
-   { service && <ServiceTable name={service.name} data={service.data} /> }
-   <div className="heading">Данни за контакт</div>
-   { contactData && <ContactDataTable {...contactData} /> }
-   <button className="continue btn btn-primary" onClick={submit}>Изпрати</button> 
-</div>
-
-const render = status === Status.None ? conformation : <StatusAlert status={status} />
+      <div className="heading">Услуга</div>
+      { service && <ServiceTable name={service.name} data={service.data} /> }
+      <div className="heading">Данни за контакт</div>
+      { contactData && <ContactDataTable {...contactData} /> }
+      <button className="continue btn btn-primary" onClick={submit}>Изпрати</button> 
+   </div>
+   
+   const render = status === Status.None ? conformation : <StatusAlert status={status} />
    
    return (
       <>
