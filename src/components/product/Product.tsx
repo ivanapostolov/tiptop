@@ -20,8 +20,10 @@ const Product: React.FC = () => {
             <ServiceBox name={productData.name} icon={productData.icon} />
          </div>
          <div className="service__content">
-            <div className="form widget">
-               <ServiceForm label={product} />
+            <div className="form">
+               <div className="widget">
+                  <ServiceForm label={product} />
+               </div>
             </div>
             <div className="info">
                <div className="widget">

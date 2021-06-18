@@ -2,7 +2,7 @@
 @import '../../variables.scss';
 
 .sf__serviceForm {
-   @extend .container, .d-flex, .justify-content-center, .p-4;
+   @extend .d-flex, .justify-content-center, .p-4, .rounded;
    background-color: $primaryColor;
 }
 

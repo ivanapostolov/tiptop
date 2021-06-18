@@ -32,7 +32,8 @@ $iconSize: 6rem;
 }
 
 .pi__inclusions {
-   @extend .container, .rounded;
+   padding: 0 0.75rem;
+   @extend .rounded;
    background-color: white;
    display: flex;
    flex-direction: column;
@@ -67,7 +68,8 @@ $iconSize: 6rem;
 }
 
 .pi__faqs {
-   @extend .container, .rounded;
+   padding: 0 0.75rem;
+   @extend .rounded;
    background-color: white;
    display: flex;
    flex-direction: column;
