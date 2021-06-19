@@ -18,17 +18,11 @@
       justify-content: center;
 
       .form {
-         //max-width: 540px;
-         /*flex-grow: 1;
-         flex-shrink: 0;*/
          flex-basis: 540px;
          flex-grow: 1;
       }
 
       .info {
-         //max-width: 540px;
-         /*flex-grow: 0;
-         flex-shrink: 1;*/
          flex-basis: 320px;
          flex-grow: 1;
       }

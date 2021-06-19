@@ -13,7 +13,7 @@ const ServiceBox: React.FC<ServiceBoxProps> = ({ name, icon }) => {
 
    return (
       <div className="pr__ServiceBox">
-         <img src={`/assets/icons/${icon}.svg`} alt="Logo" />;
+         <img src={`/assets/icons/${icon}.svg`} alt="Logo" />
          <span className="title">{name}</span>
       </div>
    );
