@@ -41,7 +41,7 @@ const ServiceForm: React.FC<ServiceFormProps> = ({ label }) => {
          case 'tenants':
             return <AreaForm submit={submit} coefficient={3.2} />
          case 'renovation':
-            return <AreaForm submit={submit} coefficient={2.9} />
+            return <AreaForm submit={submit} coefficient={3.4} discountedCoefficient={4} />
          case 'furniture':
             return <UpholsteredFurnitureForm submit={submit} />
          case 'windows':
