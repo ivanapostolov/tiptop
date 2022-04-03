@@ -16,7 +16,7 @@ const Conformation: React.FC = () => {
 
    const sendRequest = async (body: any) => {
       /*'http://84.54.147.204:3000/api/order';*/
-      const url = 'https://tiptop-backend.herokuapp.com/api/order';
+      const url = 'https://tiptop-backend.herokuapp.com/order';
       
       const rawResponse: Response = await fetch(url, {
          method: 'POST',

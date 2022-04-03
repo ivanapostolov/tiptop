@@ -22,7 +22,7 @@ const ServiceTable: React.FC<ServiceTableProps> = ({ name, data}) => {
                   </tr>
                   <tr>
                      <td>Цена</td>
-                     <td>{data.price}</td>
+                     <td>{data.price.toFixed(2)}</td>
                   </tr>
                </tbody>
             );
@@ -39,7 +39,7 @@ const ServiceTable: React.FC<ServiceTableProps> = ({ name, data}) => {
                   </tr>
                   <tr>
                      <td>Цена</td>
-                     <td>{data.price}</td>
+                     <td>{data.price.toFixed(2)}</td>
                   </tr>
                </tbody>
             );
@@ -76,10 +76,63 @@ const ServiceTable: React.FC<ServiceTableProps> = ({ name, data}) => {
                   </tr>
                   <tr>
                      <td>Цена</td>
-                     <td>{data.price}</td>
+                     <td>{ data.price.toFixed(2) }</td>
                   </tr>
                </tbody>
             );
+            case 'UpholsteredFurnitureData':
+               return (
+                  <tbody>
+                     <tr>
+                        <td>Услуга</td>
+                        <td>{name}</td>
+                     </tr>
+                     <tr>
+                        <td>Дивани 2-ка</td>
+                        <td>{data.smallSofas}</td>
+                     </tr>
+                     <tr>
+                        <td>Дивани 3-ка</td>
+                        <td>{data.bigSofas}</td>
+                     </tr>
+                     <tr>
+                        <td>Ъглови дивани</td>
+                        <td>{data.cornerSofas}</td>
+                     </tr>
+                     <tr>
+                        <td>Фотьойли</td>
+                        <td>{data.armchairs}</td>
+                     </tr>
+                     <tr>
+                        <td>Столове с облегалка</td>
+                        <td>{data.seats}</td>
+                     </tr>
+                     <tr>
+                        <td>Столове без облегалка</td>
+                        <td>{data.stools}</td>
+                     </tr>
+                     <tr>
+                        <td>Единични еднолицеви матраци</td>
+                        <td>{data.smallMattresses}</td>
+                     </tr>
+                     <tr>
+                        <td>Двойни еднолицеви матраци</td>
+                        <td>{data.bigMattresses}</td>
+                     </tr>
+                     <tr>
+                        <td>Единични двулицеви матраци</td>
+                        <td>{data.smallSidedMattresses}</td>
+                     </tr>
+                     <tr>
+                        <td>Двойни двулицеви матраци</td>
+                        <td>{data.bigSidedMattresses}</td>
+                     </tr>
+                     <tr>
+                        <td>Цена</td>
+                        <td>{ data.price.toFixed(2) }</td>
+                     </tr>
+                  </tbody>
+               );
          default: <tbody></tbody>
       }
    }
